@@ -16,25 +16,20 @@ public class Main {
 
         System.out.println("Insert your card(Enter cardnumber) to start carwash: ");
         String enteredNumber = inputUser.nextLine();
-        ArrayList<WashCard> listWashCard = new ArrayList<WashCard>();
-        while (inputWashCardId.hasNext()) {
-            listWashCard.add(new WashCard(inputWashCardId.next()));
-        }
-        inputWashCardId.close();
-        //while (true) {
-            for (int i = 0; i < listWashCard.size(); i++) {
-                if (listWashCard.get(i).equals(enteredNumber)) {
-                   // break;
-                }
-                else {
-                    System.out.println("Prøv igen");
-                    //continue;
-                }
 
-            //}
+        while (inputWashCardId.hasNext()){
+            String id = inputWashCardId.next();
+            if(enteredNumber.equals(id)){
+                System.out.println("korrekt");
+
+            }
+            else {
+                System.out.println("prøv igen");
+
+            }
+        }
+
 
         }
-    }
-
     }
 
