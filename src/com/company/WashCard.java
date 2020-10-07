@@ -1,20 +1,20 @@
 package com.company;
 
 public class WashCard {
-    private int balance;
+    //private int balance;
     private String cardNumber;
 
-    public WashCard(int balance, String cardNumber){
-        this.balance=balance;
+    public WashCard(/*int balance,*/ String cardNumber){
+        //this.balance=balance;
         this.cardNumber=cardNumber;
     }
 
-    public int getBalance(){
+    /*public int getBalance(){
         return balance;
     }
     public int setBalance(){
         return balance;
-    }
+    }*/
 
     public String getCardNumber(){
         return cardNumber;
