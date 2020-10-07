@@ -12,6 +12,9 @@ public class WashCard {
     public int getBalance(){
         return balance;
     }
+    public int setBalance(){
+        return balance;
+    }
 
     public String getCardNumber(){
         return cardNumber;
