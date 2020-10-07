@@ -7,30 +7,28 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static void main(String[] args) throws FileNotFoundException {
-        // write your code here
-        File washCardId = new File("D:\\Programs\\IdeaProjects\\CarWash\\validNumbers.txt");
-        Scanner inputUser = new Scanner(System.in);
-        Scanner inputWashCardId = new Scanner(washCardId);
+        Scanner scanner = new Scanner(System.in);
+        Scanner textxcan = new Scanner(new File("D:/Programs/IdeaProjects/CarWash/validNumbers.txt"));
 
-        System.out.println("Insert your card(Enter cardnumber) to start carwash: ");
-        String enteredNumber = inputUser.nextLine();
-        String invalidID = "999999";
+        ArrayList<Object> list = new ArrayList<>();
+        while (textxcan.hasNextLine()) {
+            list.add(textxcan.nextLine());
+        }
 
-        while (inputWashCardId.hasNext()) {
-            String id = inputWashCardId.next();
+        System.out.println("Tast kode eller tast afslut for at afslutte");
 
-            if (id.equals(enteredNumber)) {
-                System.out.println("korrekt");
+        while (true) {
+            String s = scanner.next();
+            if (list.contains(s)) {
+                System.out.println("Korrekt");
                 break;
-            }
-            else if (id.equals(invalidID))
-            {
-                System.out.println("Forkert ID, prøv igen.");
+            } else if (s.equalsIgnoreCase("afslut")) {
+                System.out.println("Du har afsluttet");
+                break;
+            } else {
+                System.out.println("Forkert, prøv igen eller afslut");
             }
         }
     }
-
-
 }
