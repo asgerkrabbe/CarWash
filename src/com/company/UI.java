@@ -11,6 +11,7 @@ public class UI {
     }
 
     public void pressOne(){
+        System.out.println("Weekdays before 14 you're eligible for a 20% discount");
         System.out.println("Press 1 for wash type Economy: ");
         System.out.println("Press 2 for wash type Standard");
         System.out.println("Press 3 for wash type DeLuxe");

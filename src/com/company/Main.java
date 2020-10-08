@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException  {
-        File washCardId = new File("C:/Users/asger/IdeaProjects/CarWash-1/validNumbers.txt");
+        File washCardId = new File("/Users/AndreasGargulak/Documents/KEA/CarWash/validNumbers.txt");
         Scanner inputUser = new Scanner(System.in);
         Scanner inputWashCardId = new Scanner(washCardId);
         WashCard washCard = new WashCard();
-        FileWriter myWriter = new FileWriter("C:/Users/asger/IdeaProjects/CarWash-1/CarWashStatistic",true);
+        FileWriter myWriter = new FileWriter("/Users/AndreasGargulak/Documents/KEA/CarWash/CarWashStatistic",true);
 
         ArrayList<Object> list = new ArrayList<>();
         while (inputWashCardId.hasNextLine()) {
@@ -45,20 +45,30 @@ public class Main {
                     ui.pressOne();
                     choice = inputUser.nextInt();
                     if (choice == 1) {
-                        System.out.println("You've chosen the Economy wash, 50,- will " +
+                        int price;
+                        Discount discount = new Discount();
+                        price = discount.calculateDiscount(50);
+                        if(washCard.getBalance()<price){
+                            System.out.println("you dont have enough money");
+                            break;
+                        }
+                        System.out.println("You've chosen the Economy wash," +price+",-"  +"will " +
                                 "be deducted from you card");
 
-                        washCard.deductFromBalance(50);
-                        myWriter.write("\nEconomy wash: " + "50,-");
+                        washCard.deductFromBalance(price);
+                        myWriter.write("\nEconomy wash: " + price+",-");
                         myWriter.close();
                         break program;
                     }
                     if (choice == 2) {
-                        System.out.println("You've chosen the Standard wash, 80,- will " +
+                        int price;
+                        Discount discount = new Discount();
+                        price = discount.calculateDiscount(80);
+                        System.out.println("You've chosen the Standard wash,"+ price+",-" + "will " +
                                 "be deducted from you card");
 
-                        washCard.deductFromBalance(80);
-                        myWriter.write("\nStandard wash: " + "80,-");
+                        washCard.deductFromBalance(price);
+                        myWriter.write("\nStandard wash: " + price+",-");
                         myWriter.close();
                         break program;
                     }
