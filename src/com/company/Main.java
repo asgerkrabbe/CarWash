@@ -56,7 +56,7 @@ public class Main {
                                 "be deducted from you card");
 
                         washCard.deductFromBalance(price);
-                        myWriter.write("\nEconomy wash: " + price+",-");
+                        myWriter.write(price+"\n");
                         myWriter.close();
                         break program;
                     }
@@ -68,7 +68,7 @@ public class Main {
                                 "be deducted from you card");
 
                         washCard.deductFromBalance(price);
-                        myWriter.write("\nStandard wash: " + price+",-");
+                        myWriter.write(price+"\n");
                         myWriter.close();
                         break program;
                     }
@@ -76,7 +76,7 @@ public class Main {
                         System.out.println("You've chosen the DeLuxe wash, 120,- will " +
                                 "be deducted from you card");
                         washCard.deductFromBalance(120);
-                        myWriter.write("\nDeLuxe wash: " + "120,-");
+                        myWriter.write("120\n");
                         myWriter.close();
                         break program;
                     }
@@ -101,12 +101,18 @@ public class Main {
                     break;
                 case 4:
                     Admin admin = new Admin();
-                    String password = inputUser.nextLine();
-                    admin.adminMenu(password);
-                    break;
+                    System.out.println("Enter admin password");
+                    String s = inputUser.nextLine();
+
+                    String Password = inputUser.nextLine();
+                    admin.adminMenu(Password);
+                    admin.carStat();
+                    break program;
+
                 case 5:
                     break program;
             }
         }
+
     }
 }
