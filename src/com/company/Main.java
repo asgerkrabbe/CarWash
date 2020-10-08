@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        File washCardId = new File("D:/Programs/IdeaProjects/CarWash/validNumbers.txt");
+        File washCardId = new File("C:\\Users\\asger\\IdeaProjects\\CarWash-1\\validNumbers.txt");
         Scanner inputUser = new Scanner(System.in);
         Scanner inputWashCardId = new Scanner(washCardId);
 
