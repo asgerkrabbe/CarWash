@@ -47,6 +47,7 @@ public class Main {
                         System.out.println("You've chosen the Economy wash, 50,- will " +
                                 "be deducted from you card");
                         washCard.deductFromBalance(50);
+
                     }
                     if (choice==2){
                         System.out.println("You've chosen the Standard wash, 80,- will " +
@@ -63,8 +64,6 @@ public class Main {
                     System.out.println("Insert creditcard");
                     System.out.println("Insert the amount you wish to recharge");
                     choice = inputUser.nextInt();
-                    //System.out.println("Write yes to confirm chosen amount: " + choice);
-                    //String s = inputUser.nextLine();
                     washCard.addToBalance(choice);
 
                     System.out.println("Press 1 for receipt, or press 2 if you dont want one");
@@ -78,6 +77,11 @@ public class Main {
                     }
                 case 3:
                     ui.pressThree();
+                    break;
+                case 4:
+                    Admin admin = new Admin();
+                    String password = inputUser.nextLine();
+                    admin.adminMenu(password);
                     break;
                 case 5:
                     break program;
