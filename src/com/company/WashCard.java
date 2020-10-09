@@ -1,7 +1,7 @@
 package com.company;
 
 public class WashCard {
-    private int balance= 200;
+    private int balance;
     private String cardNumber;
 
     public int getBalance(){
@@ -12,14 +12,19 @@ public class WashCard {
         return cardNumber;
     }
 
-    public void addToBalance(int amount){
-        balance += amount;
+    public int addToBalance(int amount){
+        balance = balance + amount;
+        return balance;
     }
+
     public void deductFromBalance(int amount){
         balance -= amount;
     }
 
-    public WashCard(){
+    public WashCard(int balance){
+        this.balance = balance;
     }
 
+    public WashCard() {
+    }
 }
