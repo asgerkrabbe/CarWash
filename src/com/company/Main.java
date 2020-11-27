@@ -21,7 +21,7 @@ public class Main {
         while (inputWashCardId.hasNextLine()) {
             list.add(inputWashCardId.nextLine());
         }
-
+//
         ui.menuloop(admin, discount, washCard, myWriter, inputUser, ui, list);
     }
 }
